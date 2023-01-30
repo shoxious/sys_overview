@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Systemressourcen</title>
+    <script>
+        function updateImage() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/refresh_data", true);
+            xhr.responseType = "text";
+            xhr.onload = function () {
+                document.querySelector("img").src = "data:image/png;base64," + xhr.response;
+            };
+            xhr.send();
+        }
+
+        setInterval(updateImage, 1000);
+    </script>
+</head>
+<body>
+<img src="data:image/png;base64, {{ imageData }}"/>
+</body>
+</html>
