@@ -2,6 +2,17 @@
 <html>
 <head>
     <title>Systemressourcen</title>
+    <style>
+        img {
+            width: 500px;
+        }
+
+        @media (max-width: 1200px) {
+            img {
+                width: 100%;
+            }
+        }
+    </style>
     <script>
         function updateImage() {
             var xhr = new XMLHttpRequest();
@@ -17,6 +28,8 @@
     </script>
 </head>
 <body>
-<img src="data:image/png;base64, {{ imageData }}"/>
+<div >
+    <img src="data:image/png;base64, {{ imageData }}"/>
+</div>
 </body>
 </html>
